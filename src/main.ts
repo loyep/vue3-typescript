@@ -1,13 +1,13 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
+// import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import './registerServiceWorker'
 
-Vue.config.productionTip = false
-
-new Vue({
+const app = createApp({
   router,
   store,
-  render: h => h(App)
-}).$mount('#app')
+  render: (h: Function) => h(App)
+})
+
+app.mount('#app')
